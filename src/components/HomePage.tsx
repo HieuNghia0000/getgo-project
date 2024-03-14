@@ -40,7 +40,7 @@ function HomePage() {
                             </span>
                         </div>
                         <div className="mt-2">
-                            <form>
+                            <form action="/search" method="get">
                                 <div className="grid grid-cols-2 gap-6">
                                     <div>
                                         <span className="font-bold">How do you want to spend your time?</span>
@@ -85,7 +85,7 @@ function HomePage() {
                                             <span className="font-bold">Write down your ideal trip!</span>
                                         </div>
                                         <div className="mb-2 relative">
-                                            <textarea placeholder="Write something..."
+                                            <textarea placeholder="Write something..." name="ideal"
                                                       className="outline-none w-full resize-none h-[80px] rounded-xl p-2 shadow-inner"/>
                                         </div>
                                     </div>

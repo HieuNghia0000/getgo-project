@@ -1,0 +1,22 @@
+{
+  "sieu_thi": [
+    {
+      "name": "FamilyMart - 171 Nam Kỳ Khởi Nghĩa (VT)",
+      "address": "171 Nam Kỳ Khởi Nghĩa, P. 3",
+      "longitude": 107.0856854,
+      "latitude": 10.3497726,
+      "rating": ".",
+      "status": true,
+      "image": "https://images.foody.vn/res/g109/1087505/prof/s640x400/image-3d7f79c3-240103174421.jpeg"
+    },
+    {
+      "name": "Family Mart - Đồ Chiểu",
+      "address": "48 Đồ Chiểu, P. 1",
+      "longitude": 107.078043,
+      "latitude": 10.34948,
+      "rating": "6.9",
+      "status": true,
+      "image": "https://images.foody.vn/res/g66/650780/prof/s640x400/foody-mobile-2-jpg-426-636277647171682593.jpg"
+    }
+  ]
+}
