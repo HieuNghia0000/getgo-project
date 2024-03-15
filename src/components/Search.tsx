@@ -8,26 +8,41 @@ function Search() {
     const searchParams = new URLSearchParams(location.search);
     const idealParam = searchParams.get('ideal');
 
+    const idealParamFormatted = idealParam ? idealParam.replace(/ /g, '%20') : '';
+
     const [shopData, setShopData] = useState<Shop[]>([]);
+    const [error, setError] = useState<string | null>(null);
 
     useEffect(() => {
         document.title = "GetGo Travel Companion";
         const fetchData = async () => {
             try {
-                const response = await axios.get('https://648fd30f1e6aa71680ca2038.mockapi.io/Location');
+                const response = await axios.get(`https://a3cce3f7-980e-40b1-bc08-c18d5716c46f-00-3ix7a6f570a3z.sisko.replit.dev/${idealParamFormatted}`);
+                console.log(`https://a3cce3f7-980e-40b1-bc08-c18d5716c46f-00-3ix7a6f570a3z.sisko.replit.dev/${idealParamFormatted}`)
                 const shop: Shop[] = response.data;
                 console.log(shop);
                 setShopData(shop);
             } catch (error) {
                 console.error('Error fetching data:', error);
+                setError("Sorry, but no results for you.");
             }
         };
 
         fetchData();
-    }, []);
+    }, [idealParamFormatted]);
 
     const renderShops = () => {
-        if (idealParam === "Toi muon di sieu thi, cho toi 2 dia diem") {
+        if (error) {
+            return (
+                <div className="p-2">
+                    <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative">
+                        <p>{error}</p>
+                    </div>
+                </div>
+            );
+        }
+
+        if (shopData) {
             return (
                 <div className="p-2">
                     {shopData.map((shop) => (
